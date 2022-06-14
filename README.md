@@ -1,16 +1,17 @@
 # Project 4: Around The U.S.
 
-### Overview
+### Visão Geral
 
-* Figma
-* Images
+Projeto desenvolvido durante o curso de Web Development da Practium by Yandex. A
+pagina mostra diversos cards com diferente localizações dos Estados Unidos.
+Nesse projeto foram utilizadas as seguintes teorias: HTML, CSS semântico, metodologia BEM para nomenclatura e estrutura de arquivos e Javascript.
 
 **Figma**
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* [Link para o projeo no Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
 
-**Images**
+**GitHub Pages**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+* [Link para o projeto publicado no Github Pages]()
 
-Have fun with JavaScript!
+

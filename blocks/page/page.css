@@ -1,0 +1,9 @@
+.page {
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    background-color: #000;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}

@@ -1,0 +1,20 @@
+.popup__square {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 34px 36px;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .popup__square {
+        max-width: 65%;
+    }
+}
