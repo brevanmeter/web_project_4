@@ -7,3 +7,9 @@
     font-size: 14px;
     line-height: 1.21;
 }
+
+@media screen and (max-width: 640px) {
+    .popup__insert {
+        margin-bottom: 46px;
+    }
+}

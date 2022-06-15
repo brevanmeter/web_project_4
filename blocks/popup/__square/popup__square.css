@@ -13,8 +13,9 @@
     
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
     .popup__square {
-        max-width: 65%;
+        max-width: 282px;
+        padding: 25px 22px;
     }
 }
