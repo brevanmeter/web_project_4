@@ -12,11 +12,24 @@
 <body class="page">
 
     <header class="header">
-        <img class="header__logo" src="images/header_logo.svg" alt="Logo do site Around the US">     
+        <img class="header__logo" src="images/header_logo.svg" alt="Logo do site Around the US">
     </header>
 
     <main>
-
+        <section class="popup">
+            <div class="popup__square">
+                <a class="popup__close-icon">
+                    <img src="images/closeicon.svg" alt="Icone de fechar">
+                </a>
+                <h2 class="popup__title">Editar perfil</h2>
+                <form class="popup__insert">
+                    <input type="text" name="name" class="popup__insert-name" placeholder="Nome">
+                    <input type="text" name="about" class="popup__insert-name" placeholder="Explorar">
+                </form>
+                <button class="popup__save-button">Salvar</button>
+            </div>
+        </section>
+        
         <section class="profile">
             <img class="profile__avatar" src="images/profile_image.jpg" alt="Foto de perfil de Jacques Cousteau">
             <div class="profile__info">
@@ -30,20 +43,6 @@
                 <p class="profile__description">Explorar</p>
             </div>
             <button class="profile__add-button">+</button>
-        </section>
-
-        <section class="popup">
-            <div class="popup__square">
-                <a class="popup__close-icon">
-                    <img src="images/closeicon.svg" alt="Icone de fechar">
-                </a>
-                <h2 class="popup__title">Editar perfil</h2>
-                <form class="popup__insert">
-                    <input type="text" name="name" class="popup__insert-name" placeholder="Nome">
-                    <input type="text" name="about" class="popup__insert-name" placeholder="Explorar">
-                </form>
-                <button class="popup__save-button">Salvar</button>
-            </div>
         </section>
 
         <ul class="elements">
@@ -101,4 +100,5 @@
         <p class="footer__text">© 2021 Around The U.S.</p>
     </footer>
     <script src="./script/script.js"></script>
+
 </html>
