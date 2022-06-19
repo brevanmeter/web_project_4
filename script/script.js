@@ -10,20 +10,22 @@ let cardLikeButton = document.querySelector(".card__like-button");
 function editPopup() {
     popup.classList.toggle("popup_opened");
     insertName.value = profileName.textContent;
+    insertName.value = profileDescription.textContent; 
 }
 
 function savePopup(evt) {
     profileName.textContent = insertName.value;
+    profileDescription.textContent = insertName.value;
     popup.classList.toggle("popup_opened");
     evt.preventDefault();
 }
 
 for (let i = 0; i < cardLikeButton.length; i++) {
-    cardLikeButton[i].addEventListener("click", callCardLikeButton);
-    function callCardLikeButton() {
-    cardLikeButton[i].classList.toggle("card__like-button_active");
-    }
 }
+cardLikeButton[i].addEventListener("click", callCardLikeButton);
+function callCardLikeButton() {
+}
+
 
 editButton.addEventListener("click", editPopup);
 closeButton.addEventListener("click", editPopup);

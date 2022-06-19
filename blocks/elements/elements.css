@@ -6,12 +6,12 @@
     column-gap: 17px;
     list-style: none;
     max-width: 880px;
-    padding-left: 0;
+    padding: 0;
 }
 
-@media screen and (min-width: 641px) and (max-width: 920px) {
+@media screen and (max-width: 920px) {
     .elements {
-        width: 640px;
+        max-width: 640px;
         justify-content: center;
     }
 }
@@ -19,6 +19,5 @@
 @media screen and (max-width: 640px) {
     .elements {
         margin-bottom: 50px;
-        justify-content: center;
     }
 }
