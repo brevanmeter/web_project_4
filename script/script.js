@@ -21,9 +21,9 @@ function savePopup(evt) {
 }
 
 for (let i = 0; i < cardLikeButton.length; i++) {
-    cardLikeButton[i].addEventListener("click", callCardLikeButton);
-    function callCardLikeButton() {
-    }
+    cardLikeButton[i].addEventListener("click", callCardLikeButton);   
+}
+function callCardLikeButton() {
 }
 
 editButton.addEventListener("click", editPopup);
