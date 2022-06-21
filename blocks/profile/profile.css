@@ -16,13 +16,10 @@
 
 @media screen and (max-width: 640px) {
     .profile {
-        margin: 38px auto 36px;
-        /* Ola, Julia... eu alterei a margin superior para 38px conforme
-        voce solicitou, mas estou um pouco confusa. Essa margem se refere ao 
-        layout de 320px no figma, correto? Se sim, o jeito de verificar seria
-        seleciiona e clicar no profile, e medir ate a linha que atravessa o 
-        header. Se for isso, esta mostrando 42px superior. Ou estou vendo isso
-        de forma incorreta? */
+        margin: 42px auto 36px;
+        /* Ola, Julia... O Thiago me disse que falou com voce sobre essa parte, certo?
+        Mudei para 42px, ok? Baseado no bloco profile do figma, medindo do bloco
+        ate a linha do header. */
         max-width: 300px;
         display: flex;
         flex-direction: column;
