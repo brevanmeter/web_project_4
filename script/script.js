@@ -16,7 +16,7 @@ function editPopup() {
 
 function savePopup(evt) {
     profileName.textContent = insertName.value;
-    profileDescription.textContent = insertName.value;
+    profileDescription.textContent = insertAbout.value;
     popup.classList.toggle("popup_opened");
     evt.preventDefault();
 }
