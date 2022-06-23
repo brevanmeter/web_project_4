@@ -17,9 +17,6 @@
 @media screen and (max-width: 640px) {
     .profile {
         margin: 42px auto 36px;
-        /* Ola, Julia... O Thiago me disse que falou com voce sobre essa parte, certo?
-        Mudei para 42px, ok? Baseado no bloco profile do figma, medindo do bloco
-        ate a linha do header. */
         max-width: 300px;
         display: flex;
         flex-direction: column;
