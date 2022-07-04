@@ -17,7 +17,7 @@
 
     <main class="main">
 
-        <div class="popup">
+        <div class="popup popup__edit-profile">
             <section class="popup__container">
                 <a class="popup__close-icon">
                     <img src="images/closeicon.svg" alt="Icone de fechar">
@@ -27,10 +27,34 @@
                     <input type="text" name="name" class="popup__insert-name" placeholder="Nome">
                     <input type="text" name="about" class="popup__insert-about" placeholder="Explorar">
                 </form>
-                <button class="popup__save-button">Salvar</button>         
-        </section>
+                <button class="popup__save-button">Salvar</button>
+            </section>
         </div>
-        
+
+        <div class="popup popup__add-card">
+            <section class="popup__container">
+                <a class="popup__close-icon popup__close-icon_add">
+                    <img src="images/closeicon.svg" alt="Icone de fechar">
+                </a>
+                <h2 class="popup__title">Novo local</h2>
+                <form class="popup__insert">
+                    <input type="text" name="name" class="popup__insert-title" placeholder="Título">
+                    <input type="text" name="about" class="popup__insert-link" placeholder="Link da imagem">
+                </form>
+                <button class="popup__save-button popup__save-button_card">Criar</button>
+            </section>
+        </div>
+
+        <div class="popup popup__image">
+            <section class="popup__container popup__container_img">
+                <figure class="figure">
+                    <img src="images/closeicon.svg" class="popup__close-icon popup__close-icon_img" alt="Close Icon">
+                    <img src="images/image_1.jpg" alt="" class="popup__image-view">
+                    <figcaption class="popup__caption">Hawaii</figcaption>
+                </figure>
+            </section>
+        </div>
+
         <section class="profile">
             <img class="profile__avatar" src="images/profile_image.jpg" alt="Foto de perfil de Jacques Cousteau">
             <div class="profile__info">
@@ -46,60 +70,29 @@
             <button class="profile__add-button">+</button>
         </section>
 
-        <ul class="elements">
-            <li class="card">
-                <img class="card__image" src="images/image_1.jpg" alt="Foto de um rio com arvores na beirada">
-                <div class="card__rectangle">
-                    <p class="card__text">Vale do Yosemite</p>
-                    <img class="card__like-button" src="images/likebutton.svg"
-                        alt="Botao de curtir em formato de coracao">
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__image" src="images/image_2.jpg" alt="Foto de um rio com arvores na beirada">
-                <div class="card__rectangle">
-                    <p class="card__text">Lago Louise</p>
-                    <img class="card__like-button" src="images/likebutton.svg"
-                        alt="Botao de curtir em formato de coracao">
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__image" src="images/image_3.jpg" alt="Foto de um rio com arvores na beirada">
-                <div class="card__rectangle">
-                    <p class="card__text">Montanhas Careeeee</p>
-                    <img class="card__like-button" src="images/likebutton.svg"
-                        alt="Botao de curtir em formato de coracao">
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__image" src="images/image_4.jpg" alt="Foto de um rio com arvores na beirada">
-                <div class="card__rectangle">
-                    <p class="card__text">Latemar</p>
-                    <img class="card__like-button" src="images/likebutton.svg"
-                        alt="Botao de curtir em formato de coracao">
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__image" src="images/image_5.jpg" alt="Foto de um rio com arvores na beirada">
-                <div class="card__rectangle">
-                    <p class="card__text">Vanoise National Park</p>
-                    <img class="card__like-button" src="images/likebutton.svg"
-                        alt="Botao de curtir em formato de coracao">
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__image" src="images/image_6.jpg" alt="Foto de um rio com arvores na beirada">
-                <div class="card__rectangle">
-                    <p class="card__text">Lago di Braies</p>
-                    <img class="card__like-button" src="images/likebutton.svg"
-                        alt="Botao de curtir em formato de coracao">
-                </div>
-            </li>
-        </ul>
+            <ul class="elements"></ul>
+
     </main>
+
     <footer class="footer">
         <p class="footer__text">© 2021 Around The U.S.</p>
     </footer>
+
+    <template class="card__template">
+        <li class="card">
+            <img src="images/trash.svg" class="card__trash" alt="Trash icon">
+            <img src="images/image_1.jpg" class="card__image" alt="Yosemite Valley Image">
+            <div class="card__rectangle">
+                <p class="card__text">
+                    Texto do cartão
+                </p>
+                <button class="card__like-button">
+                    <img src="images/likebutton.svg" alt="like heart button image">
+                </button>
+            </div>
+        </li>
+    </template>
+
     <script src="./script/script.js"></script>
 
 </html>
