@@ -1,12 +1,12 @@
 const editButton = document.querySelector(".profile__edit-button");
-const popup = document.querySelector(".popup");
+//const popup = document.querySelector(".popup");
 const closePopupIcon = document.querySelectorAll(".popup__close-icon");
 const popupEditProfile = document.querySelector(".popup__edit-profile");
 const insertName = document.querySelector(".popup__insert-name");
 const insertAbout = document.querySelector(".popup__insert-about");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-const saveButtonAddCard = document.querySelector(".popup__save-button-addcard");
+const saveButtonAddCard = document.querySelector(".popup__save-button_card");
 const cardTemplate = document.querySelector(".card__template").content;
 const elements = document.querySelector(".elements");
 const addButton = document.querySelector(".profile__add-button");
@@ -15,8 +15,8 @@ const insertTitle = document.querySelector(".popup__insert-title");
 const insertLink = document.querySelector(".popup__insert-link");
 const popupImage = document.querySelector(".popup__image");
 const popupSaveButton = document.querySelector(".popup__save-button");
-const addCardTitle = document.querySelector(".popup__title");
-const addCardLink = document.querySelector(".popup__link");
+//const addCardTitle = document.querySelector(".popup__title");
+//const addCardLink = document.querySelector(".popup__link");
 
 //1. GERA OS 6 CARDS INICIAIS
 
@@ -82,6 +82,7 @@ function savePopup(evt) {
 editButton.addEventListener("click", editPopup);
 popupSaveButton.addEventListener("click", savePopup);
 
+
 //2.2 POPUP ADD CARD / SAVE POPUP ADD CARD INFO
 
 function callPopupAddCard() {
@@ -102,38 +103,37 @@ function callPopupImage(evt) {
 
 function createPopupImage(evt) {
     const imageView = document.querySelector(".popup__image-view");
-    imageView.src = evt.target.src;
+    imageView.src = evt.target.src
     imageView.alt = evt.target.alt;
     const imageTitle = document.querySelector(".popup__caption");
     imageTitle.textContent = evt.target.alt;
     popupImage.classList.toggle("popup_opened");
-}  
+}
 
-// SALVA DADOS DO ADDCARDS E INCLUI NA LISTA
+
+//3. ADICIONA CARDS
 
 function addCard() {
   const newCard = {
     name: insertTitle.value,
     link: insertLink.value,
   };
-  initialCards.unshift(newCard);
-
+  
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   cardElement.querySelector(".card__text").textContent = newCard.name;
-  cardElement.querySelector(".card__image").src = newCard.name;
-  cardElement.querySelector(".card__image").alt = newCard.link;
+  cardElement.querySelector(".card__image").src = newCard.link;
+  cardElement.querySelector(".card__image").alt = newCard.name;
   elements.prepend(cardElement);
   callPopupImage();
-  callInitialCards();
-  clearAddCardPopup();
 }
 
-function clearAddCardPopup() {
-  popupAddCard.classList.remove("popup_opened");
-  insertTitle.value = "";
-  insertLink.value = "";
-  event.preventDefault();
+function saveCard() {
+    addCard();
+    popupAddCard.classList.remove("popup_opened");
 }
+
+//chamar o popup de adicionar card
+saveButtonAddCard.addEventListener("click", saveCard);
 
 //3 FECHA OS POPUPS
 
