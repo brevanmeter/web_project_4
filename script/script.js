@@ -59,7 +59,7 @@ const initialCards = [
     });
     callLikeButton();
     callPopupImage();
-    deletCardButton();
+    deleteCardButton();
   }
 
 //2. ABERTURA DE POPUPS 
@@ -109,6 +109,32 @@ function createPopupImage(evt) {
     popupImage.classList.toggle("popup_opened");
 }  
 
+// SALVA DADOS DO ADDCARDS E INCLUI NA LISTA
+
+function addCard() {
+  const newCard = {
+    name: insertTitle.value,
+    link: insertLink.value,
+  };
+  initialCards.unshift(newCard);
+
+  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+  cardElement.querySelector(".card__text").textContent = newCard.name;
+  cardElement.querySelector(".card__image").src = newCard.name;
+  cardElement.querySelector(".card__image").alt = newCard.link;
+  elements.prepend(cardElement);
+  callPopupImage();
+  callInitialCards();
+  clearAddCardPopup();
+}
+
+function clearAddCardPopup() {
+  popupAddCard.classList.remove("popup_opened");
+  insertTitle.value = "";
+  insertLink.value = "";
+  event.preventDefault();
+}
+
 //3 FECHA OS POPUPS
 
 closePopupIcon.forEach(function (item) {
@@ -121,10 +147,28 @@ closePopupIcon.forEach(function (item) {
     item.classList.remove("popup_opened");
   }
 
-callInitialCards();
+// 4. LIKE BUTTON
 
+  function callLikeButton() {
+    const likeButton = document.querySelectorAll(".card__like-button");
+    likeButton.forEach(function (item) {
+      item.addEventListener("click", function () {
+        item.classList.toggle("card__like-button_active");
+      });
+    });
+  }
 
+// 5. DELETE BUTTON
 
+  function deleteCardButton() {
+    const deleteButton = document.querySelectorAll(".card__trash");
+    deleteButton.forEach(function (item) {
+      item.addEventListener("click", function () {
+        item.closest(".card").remove();
+      });
+    });
+  }
 
+  callInitialCards();
 
 
