@@ -18,6 +18,7 @@ const popupSaveButton = document.querySelector(".popup__save-button");
 //const addCardTitle = document.querySelector(".popup__title");
 //const addCardLink = document.querySelector(".popup__link");
 
+
 //1. GERA OS 6 CARDS INICIAIS
 
 const initialCards = [
@@ -57,9 +58,7 @@ const initialCards = [
       cardElement.querySelector(".card__image").alt = item.name;
       return elements.append(cardElement);
     });
-    callLikeButton();
     callPopupImage();
-    deleteCardButton();
   }
 
 //2. ABERTURA DE POPUPS 
@@ -94,20 +93,32 @@ addButton.addEventListener("click", callPopupAddCard);
 
 //2.3 POPUP IMAGE
 
-function callPopupImage(evt) {
-        popupImage.classList.toggle("popup_opened");
-        popupImage.src = evt.target.src;
-    }
-    
-    elements.addEventListener("click", callPopupImage); 
+function callPopupImage() {
+  const images = document.querySelectorAll(".card__image");
+  images.forEach(function (item) {
+    item.addEventListener("click", createPopupImage);
+  });
+}
 
 function createPopupImage(evt) {
-    const imageView = document.querySelector(".popup__image-view");
-    imageView.src = evt.target.src
-    imageView.alt = evt.target.alt;
-    const imageTitle = document.querySelector(".popup__caption");
-    imageTitle.textContent = evt.target.alt;
-    popupImage.classList.toggle("popup_opened");
+  const imageView = document.querySelector(".popup__image-view");
+  imageView.src = evt.target.src;
+  imageView.alt = evt.target.alt;
+  const imageTitle = document.querySelector(".popup__caption");
+  imageTitle.textContent = evt.target.alt;
+  popupImage.classList.add("popup_opened");
+}
+
+//3 FECHA OS POPUPS
+
+closePopupIcon.forEach(function (item) {
+  item.addEventListener("click", function () {
+    closePopup(item.closest(".popup"));
+  });
+});
+
+function closePopup(item) {
+  item.classList.remove("popup_opened");
 }
 
 
@@ -135,17 +146,28 @@ function saveCard() {
 //chamar o popup de adicionar card
 saveButtonAddCard.addEventListener("click", saveCard);
 
-//3 FECHA OS POPUPS
+//4. LIKE BUTTON
 
-closePopupIcon.forEach(function (item) {
-    item.addEventListener("click", function () {
-      closePopup(item.closest(".popup"));
+// adiciona o evento de click no botão de like
+function callLikeButton() {
+    const likeButton = document.querySelector(".card__like-button");
+    likeButton.forEach(function (item) {
+        item.addEventListener("click", function () {
+            item.classList.toggle("card__like-button_active");
+        });
     });
-  });
-  
-  function closePopup(item) {
-    item.classList.remove("popup_opened");
-  }
+}
+
+// 5. DELETE CARD
+// adiciona o evento de click no botão de delete  
+function deleteCardButton() {
+    const deleteButton = document.querySelector(".card__trash");
+    deleteButton.forEach(function (item) {
+        item.addEventListener("click", function () {
+            item.closest(".card").remove();
+        });
+    });
+}
 
   callInitialCards();
 
