@@ -1,5 +1,4 @@
 const editButton = document.querySelector(".profile__edit-button");
-//const popup = document.querySelector(".popup");
 const closePopupIcon = document.querySelectorAll(".popup__close-icon");
 const popupEditProfile = document.querySelector(".popup__edit-profile");
 const insertName = document.querySelector(".popup__insert-name");
@@ -15,8 +14,6 @@ const insertTitle = document.querySelector(".popup__insert-title");
 const insertLink = document.querySelector(".popup__insert-link");
 const popupImage = document.querySelector(".popup__image");
 const popupSaveButton = document.querySelector(".popup__save-button");
-//const addCardTitle = document.querySelector(".popup__title");
-//const addCardLink = document.querySelector(".popup__link");
 
 
 //1. GERA OS 6 CARDS INICIAIS
@@ -152,9 +149,9 @@ saveButtonAddCard.addEventListener("click", saveCard);
 
 // adiciona o evento de click no botão de like
 function callLikeButton() {
-    const likeButton = document.querySelector(".card__like-button");
+    const likeButton = document.querySelectorAll(".card__like-button");
     likeButton.forEach(function (item) {
-        item.addEventListener("click", function () {
+        item.addEventListener("click", function (evt) {
             item.classList.toggle("card__like-button_active");
         });
     });
@@ -162,8 +159,9 @@ function callLikeButton() {
 
 // 5. DELETE CARD
 // adiciona o evento de click no botão de delete  
+
 function deleteCardButton() {
-    const deleteButton = document.querySelector(".card__trash");
+    const deleteButton = document.querySelectorAll(".card__trash");
     deleteButton.forEach(function (item) {
         item.addEventListener("click", function () {
             item.closest(".card").remove();
@@ -172,5 +170,7 @@ function deleteCardButton() {
 }
 
   callInitialCards();
+
+
 
 
