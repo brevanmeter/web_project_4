@@ -58,7 +58,9 @@ const initialCards = [
       cardElement.querySelector(".card__image").alt = item.name;
       return elements.append(cardElement);
     });
-    callPopupImage();
+  callPopupImage();
+  callLikeButton();
+  deleteCardButton();
   }
 
 //2. ABERTURA DE POPUPS 
