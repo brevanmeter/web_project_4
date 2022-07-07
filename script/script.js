@@ -137,6 +137,7 @@ function addCard() {
   callPopupImage();
 }
 
+
 function saveCard() {
     addCard();
     popupAddCard.classList.remove("popup_opened");
