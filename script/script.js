@@ -1,17 +1,21 @@
 const editButton = document.querySelector(".profile__edit-button");
 const closePopupIcon = document.querySelectorAll(".popup__close-icon");
-const popupEditProfile = document.querySelector(".popup__edit-profile");
-const insertName = document.querySelector(".popup__insert-name");
-const insertAbout = document.querySelector(".popup__insert-about");
+const addButton = document.querySelector(".profile__add-button");
+const saveButtonAddCard = document.querySelector(".popup__save-button_card");
+
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-const saveButtonAddCard = document.querySelector(".popup__save-button_card");
+
 const cardTemplate = document.querySelector(".card__template").content;
 const elements = document.querySelector(".elements");
-const addButton = document.querySelector(".profile__add-button");
-const popupAddCard = document.querySelector(".popup__add-card");
+
 const insertTitle = document.querySelector(".popup__insert-title");
 const insertLink = document.querySelector(".popup__insert-link");
+const insertName = document.querySelector(".popup__insert-name");
+const insertAbout = document.querySelector(".popup__insert-about");
+
+const popupEditProfile = document.querySelector(".popup__edit-profile");
+const popupAddCard = document.querySelector(".popup__add-card");
 const popupImage = document.querySelector(".popup__image");
 const popupSaveButton = document.querySelector(".popup__save-button");
 
@@ -129,26 +133,26 @@ function addCard() {
     link: insertLink.value,
   };
   
+  
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   cardElement.querySelector(".card__text").textContent = newCard.name;
   cardElement.querySelector(".card__image").src = newCard.link;
   cardElement.querySelector(".card__image").alt = newCard.name;
   elements.prepend(cardElement);
   callPopupImage();
+  deleteCardButton();
 }
-
 
 function saveCard() {
     addCard();
     popupAddCard.classList.remove("popup_opened");
 }
 
-//chamar o popup de adicionar card
 saveButtonAddCard.addEventListener("click", saveCard);
 
 //4. LIKE BUTTON
 
-// adiciona o evento de click no botão de like
+
 function callLikeButton() {
     const likeButton = document.querySelectorAll(".card__like-button");
     likeButton.forEach(function (item) {
@@ -159,7 +163,7 @@ function callLikeButton() {
 }
 
 // 5. DELETE CARD
-// adiciona o evento de click no botão de delete  
+
 
 function deleteCardButton() {
     const deleteButton = document.querySelectorAll(".card__trash");
