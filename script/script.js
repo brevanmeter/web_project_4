@@ -2,6 +2,7 @@ const editButton = document.querySelector(".profile__edit-button");
 const closePopupIcon = document.querySelectorAll(".popup__close-icon");
 const addButton = document.querySelector(".profile__add-button");
 const saveButtonAddCard = document.querySelector(".popup__save-button_card");
+const popupSaveButton = document.querySelector(".popup__save-button");
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -17,10 +18,8 @@ const insertAbout = document.querySelector(".popup__insert-about");
 const popupEditProfile = document.querySelector(".popup__edit-profile");
 const popupAddCard = document.querySelector(".popup__add-card");
 const popupImage = document.querySelector(".popup__image");
-const popupSaveButton = document.querySelector(".popup__save-button");
 
 
-//1. GERA OS 6 CARDS INICIAIS
 
 const initialCards = [
     {
@@ -64,9 +63,6 @@ const initialCards = [
   deleteCardButton();
   }
 
-//2. ABERTURA DE POPUPS 
-
-//2.1 POPUP EDIT PROFILE / SAVE POPUP EDIT PROFILE INFO
 
 function editPopup() {
     popupEditProfile.classList.toggle("popup_opened");
@@ -85,16 +81,12 @@ editButton.addEventListener("click", editPopup);
 popupSaveButton.addEventListener("click", savePopup);
 
 
-//2.2 POPUP ADD CARD / SAVE POPUP ADD CARD INFO
-
 function callPopupAddCard() {
     popupAddCard.classList.toggle("popup_opened");
 }
    
 addButton.addEventListener("click", callPopupAddCard);
 
-
-//2.3 POPUP IMAGE
 
 function callPopupImage() {
   const images = document.querySelectorAll(".card__image");
@@ -112,7 +104,6 @@ function createPopupImage(evt) {
   popupImage.classList.add("popup_opened");
 }
 
-//3 FECHA OS POPUPS
 
 closePopupIcon.forEach(function (item) {
   item.addEventListener("click", function () {
@@ -124,8 +115,6 @@ function closePopup(item) {
   item.classList.remove("popup_opened");
 }
 
-
-//3. ADICIONA CARDS
 
 function addCard() {
   const newCard = {
@@ -150,8 +139,6 @@ function saveCard() {
 
 saveButtonAddCard.addEventListener("click", saveCard);
 
-//4. LIKE BUTTON
-
 
 function callLikeButton() {
     const likeButton = document.querySelectorAll(".card__like-button");
@@ -161,8 +148,6 @@ function callLikeButton() {
         });
     });
 }
-
-// 5. DELETE CARD
 
 
 function deleteCardButton() {
