@@ -16,8 +16,8 @@ const insertName = document.querySelector(".popup__insert-name");
 const insertAbout = document.querySelector(".popup__insert-about");
 
 const popupEditProfile = document.querySelector(".popup-editprofile");
-const popupAddCard = document.querySelector(".popup__add-card");
-const popupImage = document.querySelector(".popup__image");
+const popupAddCard = document.querySelector(".popup-addcard");
+const popupImage = document.querySelector(".popup-image");
 
 
 
