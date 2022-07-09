@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +7,11 @@
     <title>Around the U.S.</title>
     <link rel="stylesheet" href="./pages/index.css">
 </head>
-
 <body class="page">
-
     <header class="header">
         <img class="header__logo" src="images/header_logo.svg" alt="Logo do site Around the US">
     </header>
-
     <main class="main">
-
         <div class="popup popup-editprofile">
             <section class="popup__container">
                 <a class="popup__close-icon">
@@ -30,7 +25,6 @@
                 <button class="popup__save-button">Salvar</button>
             </section>
         </div>
-
         <div class="popup popup-addcard">
             <section class="popup__container">
                 <a class="popup__close-icon popup__close-icon_add">
@@ -44,7 +38,6 @@
                 <button class="popup__save-button popup__save-button_card">Criar</button>
             </section>
         </div>
-
         <div class="popup popup-image">
             <section class="popup__container popup__container_img">
                 <figure class="figure">
@@ -52,34 +45,28 @@
                         <img src="images/closeicon.svg" alt="Icone de fechar">
                     </a>
                     <img src="images/image_1.jpg" alt="" class="popup__image-view">
-                    <figcaption class="popup__caption">Hawaii</figcaption>
+                    <figcaption class="popup__caption">aaa</figcaption>
                 </figure>
             </section>
         </div>
-
         <section class="profile">
             <img class="profile__avatar" src="images/profile_image.jpg" alt="Foto de perfil de Jacques Cousteau">
             <div class="profile__info">
                 <div class="profile__top">
                     <h1 class="profile__name">Jacques Cousteau</h1>
                     <button class="editbutton">
-                        <img class="editbutton__img" src="images/editbutton.svg"
-                            alt="Imagem de botao de editar">
+                        <img src="images/editbutton.svg" class="editbutton__img" alt="Icone de editar">
                     </button>
                 </div>
                 <p class="profile__description">Explorar</p>
             </div>
             <button class="profile__add-button">+</button>
         </section>
-
         <ul class="elements"></ul>
-
     </main>
-
     <footer class="footer">
         <p class="footer__text">© 2021 Around The U.S.</p>
     </footer>
-
     <template class="card__template">
         <li class="card">
             <img src="images/trash.svg" class="card__trash" alt="Trash icon">
@@ -92,8 +79,6 @@
             </div>
         </li>
     </template>
-
     <script src="./script/script.js"></script>
 </body>
-
 </html>
