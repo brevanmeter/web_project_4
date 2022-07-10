@@ -67,14 +67,12 @@ const initialCards = [
 
 function editPopup() {
     popupEditProfile.classList.toggle("popup_opened");
-    insertName.value = profileName.textContent;
-    insertAbout.value = profileDescription.textContent;
 }
 
 function savePopup(evt) {
     profileName.textContent = insertName.value;
     profileDescription.textContent = insertAbout.value;
-    popupEditProfile.classList.toggle("popup_opened");
+    editPopup();
     evt.preventDefault();
 }
 
