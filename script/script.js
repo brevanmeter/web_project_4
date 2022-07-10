@@ -19,7 +19,7 @@ const popupEditProfile = document.querySelector(".popup-editprofile");
 const popupAddCard = document.querySelector(".popup-addcard");
 const popupImage = document.querySelector(".popup-image");
 
-
+// GERA OS CARDS INICIAIS
 
 const initialCards = [
     {
@@ -63,6 +63,7 @@ const initialCards = [
   deleteCardButton();
   }
 
+// ABRE O POPUP DE EDIÇÃO DE PERFIL E SALVA OS DADOS
 
 function editPopup() {
     popupEditProfile.classList.toggle("popup_opened");
@@ -80,6 +81,7 @@ function savePopup(evt) {
 editButton.addEventListener("click", editPopup);
 popupSaveButton.addEventListener("click", savePopup);
 
+// ABRE O POP UP DE ADIÇÃO DE CARTÃO
 
 function callPopupAddCard() {
     popupAddCard.classList.toggle("popup_opened");
@@ -87,6 +89,7 @@ function callPopupAddCard() {
    
 addButton.addEventListener("click", callPopupAddCard);
 
+// ABRE AS IMAGENS DO CARDS
 
 function callPopupImage() {
   const cardImage = document.querySelectorAll(".card__image");
@@ -104,6 +107,8 @@ function createPopupImage(evt) {
   popupImage.classList.add("popup_opened");
 }
 
+// FECHA OS POP UPS DE ADIÇÃO DE CARTÃO, EDICAO DE PERFIL E IMAGEM
+
 
 closePopupIcon.forEach(function (item) {
   item.addEventListener("click", function () {
@@ -115,13 +120,13 @@ function closePopup(item) {
   item.classList.remove("popup_opened");
 }
 
+// ADICIONA UM NOVO CARTAO E SALVA A NOVA INFORMACAO
 
 function addCard() {
   const newCard = {
     name: insertTitle.value,
     link: insertLink.value,
   };
-  
   
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   cardElement.querySelector(".card__text").textContent = newCard.name;
@@ -140,6 +145,8 @@ function saveCard() {
 saveButtonAddCard.addEventListener("click", saveCard);
 
 
+// FAZ COM QUE OS CARDS SEJAM LIKED
+
 function callLikeButton() {
     const likeButton = document.querySelectorAll(".card__like-button");
     likeButton.forEach(function (item) {
@@ -149,6 +156,7 @@ function callLikeButton() {
     });
 }
 
+// DELETA OS CARDS
 
 function deleteCardButton() {
     const deleteButton = document.querySelectorAll(".card__trash");
