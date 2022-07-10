@@ -21,70 +21,68 @@ const popupImage = document.querySelector(".popup-image");
 
 // GERA OS CARDS INICIAIS
 
-const initialCards = [
-    {
-      name: "Vale de Yosemite",
-      link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-    },
-    {
-      name: "Lago Louise",
-      link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-    },
-    {
-      name: "Montanhas Carecas",
-      link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-    },
-    {
-      name: "Latemar",
-      link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-    },
-    {
-      name: "Parque Nacional da Vanoise ",
-      link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-    },
-    {
-      name: "Lago di Braies",
-      link: "https://code.s3.yandex.net/web-code/lago.jpg",
-    },
-  ];
-  
-  
-  function callInitialCards() {
-    elements.innerHTML = "";
-    initialCards.map(function (item) {
-      const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-      cardElement.querySelector(".card__text").textContent = item.name;
-      cardElement.querySelector(".card__image").src = item.link;
-      cardElement.querySelector(".card__image").alt = item.name;
-      return elements.append(cardElement);
-    });
+const initialCards = [{
+    name: "Vale de Yosemite",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg",
+  },
+];
+
+
+function callInitialCards() {
+  elements.innerHTML = "";
+  initialCards.map(function (item) {
+    const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+    cardElement.querySelector(".card__text").textContent = item.name;
+    cardElement.querySelector(".card__image").src = item.link;
+    cardElement.querySelector(".card__image").alt = item.name;
+    return elements.append(cardElement);
+  });
   callPopupImage();
   callLikeButton();
   deleteCardButton();
-  }
+}
 
 // ABRE O POPUP DE EDIÇÃO DE PERFIL E SALVA OS DADOS
 
-function editPopup() {
-    popupEditProfile.classList.toggle("popup_opened");
+function editPopupProfile() {
+  popupEditProfile.classList.toggle("popup_opened");
 }
 
 function savePopup(evt) {
-    profileName.textContent = insertName.value;
-    profileDescription.textContent = insertAbout.value;
-    editPopup();
-    evt.preventDefault();
+  profileName.textContent = insertName.value;
+  profileDescription.textContent = insertAbout.value;
+  editPopupProfile();
 }
 
-editButton.addEventListener("click", editPopup);
+editButton.addEventListener("click", editPopupProfile);
 popupSaveButton.addEventListener("click", savePopup);
 
 // ABRE O POP UP DE ADIÇÃO DE CARTÃO
 
 function callPopupAddCard() {
-    popupAddCard.classList.toggle("popup_opened");
+  popupAddCard.classList.toggle("popup_opened");
 }
-   
+
 addButton.addEventListener("click", callPopupAddCard);
 
 // ABRE AS IMAGENS DO CARDS
@@ -125,7 +123,7 @@ function addCard() {
     name: insertTitle.value,
     link: insertLink.value,
   };
-  
+
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   cardElement.querySelector(".card__text").textContent = newCard.name;
   cardElement.querySelector(".card__image").src = newCard.link;
@@ -136,8 +134,8 @@ function addCard() {
 }
 
 function saveCard() {
-    addCard();
-    popupAddCard.classList.remove("popup_opened");
+  addCard();
+  popupAddCard.classList.remove("popup_opened");
 }
 
 saveButtonAddCard.addEventListener("click", saveCard);
@@ -146,27 +144,23 @@ saveButtonAddCard.addEventListener("click", saveCard);
 // FAZ COM QUE OS CARDS SEJAM LIKED
 
 function callLikeButton() {
-    const likeButton = document.querySelectorAll(".card__like-button");
-    likeButton.forEach(function (item) {
-        item.addEventListener("click", function (evt) {
-            item.classList.toggle("card__like-button_active");
-        });
+  const likeButton = document.querySelectorAll(".card__like-button");
+  likeButton.forEach(function (item) {
+    item.addEventListener("click", function (evt) {
+      item.classList.toggle("card__like-button_active");
     });
+  });
 }
 
 // DELETA OS CARDS
 
 function deleteCardButton() {
-    const deleteButton = document.querySelectorAll(".card__trash");
-    deleteButton.forEach(function (item) {
-        item.addEventListener("click", function () {
-            item.closest(".card").remove();
-        });
+  const deleteButton = document.querySelectorAll(".card__trash");
+  deleteButton.forEach(function (item) {
+    item.addEventListener("click", function () {
+      item.closest(".card").remove();
     });
+  });
 }
 
-  callInitialCards();
-
-
-
-
+callInitialCards();
