@@ -89,8 +89,8 @@ addButton.addEventListener("click", callPopupAddCard);
 
 
 function callPopupImage() {
-  const images = document.querySelectorAll(".card__image");
-  images.forEach(function (item) {
+  const cardImage = document.querySelectorAll(".card__image");
+  cardImage.forEach(function (item) {
     item.addEventListener("click", createPopupImage);
   });
 }
