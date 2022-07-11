@@ -62,6 +62,7 @@ function callInitialCards() {
   deleteCardButton();
 }
 
+
 // ABRE O POPUP DE EDIÇÃO DE PERFIL E SALVA OS DADOS
 
 function editPopupProfile() {
@@ -116,21 +117,17 @@ function closePopup(item) {
   item.classList.remove("popup_opened");
 }
 
-// ADICIONA UM NOVO CARTAO E SALVA A NOVA INFORMACAO
+// Salva dados do AddCards e inclui na lista
 
-function addCard() {
+function addCard(evt) {
   const newCard = {
     name: insertTitle.value,
     link: insertLink.value,
   };
 
-  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-  cardElement.querySelector(".card__text").textContent = newCard.name;
-  cardElement.querySelector(".card__image").src = newCard.link;
-  cardElement.querySelector(".card__image").alt = newCard.name;
-  elements.prepend(cardElement);
-  callPopupImage();
-  deleteCardButton();
+  initialCards.unshift(newCard);
+  callInitialCards();
+  closePopup(popupAddCard);
 }
 
 function saveCard() {
